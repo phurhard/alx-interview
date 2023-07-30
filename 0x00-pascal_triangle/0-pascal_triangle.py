@@ -3,9 +3,10 @@
 Pascal triangle
 """
 
+
 def pascal_triangle(n):
     """Outputs the pascal traingle of n
-    
+
     Keyword arguments:
     n -- the positive integer to get the pascal traingle of
     Return: A pascal triangle size of n
@@ -13,7 +14,6 @@ def pascal_triangle(n):
     triangle = []
     if n <= 0:
         return []
-    
     for i in range(n):
         if i == 0:
             row = [1]
