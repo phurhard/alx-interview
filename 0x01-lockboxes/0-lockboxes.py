@@ -9,25 +9,22 @@ def canUnlockAll(boxes):
     boxes -- A list of list of boxes with keys
     Return: Returns true or false
     """
-    unlockedBoxes = []
-    unlockedBoxes.append(boxes[0])
-    keysToCheck = []
-    keysToCheck = boxes[0]
+
     n = len(boxes)
+    unlockedBoxes = set()
+    keysToCheck = set()
 
-    for key in keysToCheck:
-        # print(f'Unlocked boxes before the next iteration {unlockedBoxes}')
-        if boxes[key] in unlockedBoxes:
-            # print(f'Boxes[key] === {boxes[key]}')
+    # Start with the first box (box 0)
+    unlockedBoxes.add(0)
+    keysToCheck.update(boxes[0])
 
+    while keysToCheck:
+        key = keysToCheck.pop()
+        if key < 0 or key >= n:
             continue
-    #         # print(boxes[key])
-        else:
-            unlockedBoxes.append(boxes[key])
-            # print(f'unlockedBoxes == {unlockedBoxes}')
-            keysToCheck += boxes[key]
-            # print(f'keysTocheck == {keysToCheck}')
-    if len(unlockedBoxes) == len(boxes):
-        return True
-    else:
-        return False
+
+        if key not in unlockedBoxes:
+            unlockedBoxes.add(key)
+            keysToCheck.update(boxes[key])
+
+    return len(unlockedBoxes) == n
