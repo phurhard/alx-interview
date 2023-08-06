@@ -4,22 +4,22 @@
 
 def canUnlockAll(boxes):
     """Returns True or false if all the boxes passed to it can be unlocked
-    
+
     Keyword arguments:
     boxes -- A list of list of boxes with keys
-    Return: Returns true or false 
+    Return: Returns true or false
     """
     unlockedBoxes = []
     unlockedBoxes.append(boxes[0])
     keysToCheck = []
     keysToCheck = boxes[0]
-    n =   len(boxes)
-    
+    n = len(boxes)
+
     for key in keysToCheck:
         # print(f'Unlocked boxes before the next iteration {unlockedBoxes}')
         if boxes[key] in unlockedBoxes:
             # print(f'Boxes[key] === {boxes[key]}')
-    
+
             continue
     #         # print(boxes[key])
         else:
