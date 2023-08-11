@@ -2,8 +2,8 @@
 """Minimum no of operations that can be carried out on a file"""
 
 
-
 def minOperations(n):
+    """min operatioon"""
     if n <= 1:
         return 0
 
