@@ -20,7 +20,4 @@ def minOperations(n):
     if n > 2:
         factors.append(n)
 
-    if not factors:
-        return 0
-
-    return sum(factors)
+    return 0 if not factors else sum(factors)

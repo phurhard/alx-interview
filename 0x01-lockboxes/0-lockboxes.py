@@ -11,11 +11,9 @@ def canUnlockAll(boxes):
     """
 
     n = len(boxes)
-    unlockedBoxes = set()
     keysToCheck = set()
 
-    # Start with the first box (box 0)
-    unlockedBoxes.add(0)
+    unlockedBoxes = {0}
     keysToCheck.update(boxes[0])
 
     while keysToCheck:
