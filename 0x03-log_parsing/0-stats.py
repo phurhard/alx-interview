@@ -1,37 +1,45 @@
 #!/usr/bin/python3
+"""This is a sample of the interview question,
+where we log the output of a server"""
+
 import sys
 import re
 
-pattern = re.compile(r'^(\d+\.\d+\.\d+\.\d+) - \[([^\]]+)\] "GET \/projects\/260 HTTP\/1\.1" (\d+) (\d+)$')
+pattern = re.compile(r'^(\d+\.\d+\.\d+\.\d+) - '
+                     r'\[([^\]]+)\] "GET \/projects\/260 HTTP\/1\.1" '
+                     r'(\d+) (\d+)$')
 
 status_codes = {}
 total_size = 0
 count = 0
-for line in sys.stdin.readlines():
+for line in sys.stdin:
     # check if the line matchs
     match = pattern.match(line.strip())
-    count +=1
+    count += 1
     # if it matchs
     if match:
-        #seperate them out
+        # seperate them out
         ip_address, date, status_code, file_size = match.groups()
-        total_size += file_size
-        status_codes[status_code] = status_codes.status_code + 1
-        if count == 10:
+        total_size += int(file_size)
+        # print(line)
+        if status_code in status_codes:
+            status_codes[status_code] += 1
+        else:
+            status_codes[status_code] = 1
+        # status_codes.append(status_code) # = status_codes[status_code] + 1
+        # print('donno')
+        try:
+            if count == 10:
+                print(f"File size: {total_size}")
+                # status_codes.sort()
+                print(f'status_codes {status_codes}')
+                for k, v in dict(sorted(status_codes.items())).items():
+                    print(f'{k}: {v}')
+                count = 0
+        except KeyboardInterrupt:
             print(f"File size: {total_size}")
-            pass
+            for k, v in dict(sorted(status_codes.items())).items():
+                print(f'{k}: {v}')
     else:
         # if it does not match skip it
         continue
-
-for line in sys.stdin.readlines():
-    if line not "<IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>":
-        continue
-    if count == 10 or ctrl-C:
-        print('statistics from beginning')
-        total_size += file_size
-        if  not status_code or not isinstance(int, status_code)
-        print(f'
-              File size: {total_size}
-              status_code : number of times it shows
-              ')
