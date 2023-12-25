@@ -21,18 +21,13 @@ for line in sys.stdin:
         # seperate them out
         ip_address, date, status_code, file_size = match.groups()
         total_size += int(file_size)
-        # print(line)
         if status_code in status_codes:
             status_codes[status_code] += 1
         else:
             status_codes[status_code] = 1
-        # status_codes.append(status_code) # = status_codes[status_code] + 1
-        # print('donno')
         try:
             if count == 10:
                 print(f"File size: {total_size}")
-                # status_codes.sort()
-                # print(f'status_codes {status_codes}')
                 for k, v in dict(sorted(status_codes.items())).items():
                     print(f'{k}: {v}')
                 count = 0
