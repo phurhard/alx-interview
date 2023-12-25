@@ -9,7 +9,7 @@ pattern = re.compile(r'^(\d+\.\d+\.\d+\.\d+) - '
                      r'\[([^\]]+)\] "GET \/projects\/260 HTTP\/1\.1" '
                      r'(\d+) (\d+)$')
 
-status_codes = {}
+status_codes: dict = {}
 total_size = 0
 count = 0
 for line in sys.stdin:
@@ -32,7 +32,7 @@ for line in sys.stdin:
             if count == 10:
                 print(f"File size: {total_size}")
                 # status_codes.sort()
-                print(f'status_codes {status_codes}')
+                # print(f'status_codes {status_codes}')
                 for k, v in dict(sorted(status_codes.items())).items():
                     print(f'{k}: {v}')
                 count = 0
