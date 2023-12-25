@@ -12,7 +12,9 @@ pattern = re.compile(r'^(\d+\.\d+\.\d+\.\d+) - '
 status_codes: dict = {}
 total_size = 0
 count = 0
-for line in sys.stdin:
+# line = sys.stdin.readline()
+# print(line)
+for line in sys.stdin.readlines():
     # check if the line matchs
     match = pattern.match(line.strip())
     count += 1
@@ -37,4 +39,7 @@ for line in sys.stdin:
                 print(f'{k}: {v}')
     else:
         # if it does not match skip it
+
+        print(line)
+        
         continue
