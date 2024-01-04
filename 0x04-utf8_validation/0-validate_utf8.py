@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ UTF-8 Validation"""
-import codecs
 
 
 def validUTF8(data):
@@ -15,5 +14,6 @@ def validUTF8(data):
         # decode the bytes using utf8 encoding
         dataBytes.decode('utf-8')
         return True
-    except Exception as e:
+
+    except Exception:
         return False
