@@ -6,7 +6,7 @@ import sys
 def queens():
     """The queens function"""
     # the checks
-    if len(sys.argv) > 2 or len(sys.argv) == 1:
+    if len(sys.argv) != 2:
         print('Usage: nqueens N')
         sys.exit(1)
     n = sys.argv[1]
