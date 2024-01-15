@@ -1,10 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import random
 import sys
 from time import sleep
 import datetime
 
-for i in range(10000):
+for i in range(100):
     sleep(random.random())
     sys.stdout.write(
         "{:d}.{:d}.{:d}.{:d} - [{}] \"GET /projects/260 HTTP/1.1\" {} {}\n"
