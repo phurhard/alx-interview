@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """This is a sample of the interview question,
 where we log the output of a server
 
