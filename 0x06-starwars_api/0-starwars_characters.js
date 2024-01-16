@@ -4,6 +4,9 @@ const movie = process.argv[2];
 const url = `https://swapi-api.alx-tools.com/api/films/${movie}`;
 /**
  * While this code works fine, it does not take into consideration the format at which the names are placed on the endpoint
+ * That's becomes the information are not really returned as it is been called, 
+ * it needs to be called with await and async
+ * 
 request(`https://swapi-api.alx-tools.com/api/films/${movie}`,
   function (err, res, body) {
     console.log(err);
@@ -24,7 +27,6 @@ request(`https://swapi-api.alx-tools.com/api/films/${movie}`,
 function makeRequest (url) {
   return new Promise((resolve, reject) => {
     request(url, (error, response, body) => {
-      //    console.log('makeRequest', url)
       if (error) {
         reject(error);
       } else {
