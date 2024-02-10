@@ -5,8 +5,9 @@ Contains the following folders
 2. LockBoxes
 3. Minimum Operation
 4. utf8-Validation
-5. g
+5. nQueens
 6. starwars
 7. rotate-2d matrix
-8. g
+8. making change
 9. island perimeter
+10. 
