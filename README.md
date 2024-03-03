@@ -10,4 +10,5 @@ Contains the following folders
 7. rotate-2d matrix
 8. making change
 9. island perimeter
-10. 
+10. Prime Game
+11. 
